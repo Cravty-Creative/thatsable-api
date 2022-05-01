@@ -9,7 +9,6 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       sac_st_id: {
-        allowNull: true,
         type: Sequelize.INTEGER,
       },
       sac_email: {
@@ -21,7 +20,6 @@ module.exports = {
         type: Sequelize.STRING,
       },
       sac_access_token: {
-        allowNull: true,
         type: Sequelize.STRING,
       },
       sac_online_status: {
@@ -29,15 +27,12 @@ module.exports = {
         type: Sequelize.BOOLEAN,
       },
       sac_last_online: {
-        allowNull: true,
         type: Sequelize.DATE,
       },
       sac_last_login: {
-        allowNull: true,
         type: Sequelize.DATE,
       },
       email_verified_at: {
-        allowNull: true,
         type: Sequelize.DATE,
       },
       sac_status: {
@@ -49,15 +44,12 @@ module.exports = {
         type: Sequelize.STRING,
       },
       updatedBy: {
-        allowNull: true,
         type: Sequelize.STRING,
       },
       deletedBy: {
-        allowNull: true,
         type: Sequelize.STRING,
       },
       deletedAt: {
-        allowNull: true,
         type: Sequelize.DATE,
       },
       createdAt: {

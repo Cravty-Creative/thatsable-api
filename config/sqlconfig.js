@@ -7,32 +7,32 @@ require("dotenv").config();
 
 /** Destruct object from .env */
 const {
-  DB_USERNAME = "root",
-  DB_PASSWORD = "",
-  DB_HOST = "127.0.0.1",
-  DB_NAME = "dbuseraccount",
+  DB_USERNAME = "kllbhmat",
+  DB_PASSWORD = "KGmbLyt8TanilZMvOoNtlTss3E33rANo",
+  DB_HOST = "satao.db.elephantsql.com",
+  DB_NAME = "kllbhmat",
 } = process.env;
 
 module.exports = {
   development: {
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    database: `${DB_NAME}_development`,
+    database: `${DB_NAME}`, //_development`,
     host: DB_HOST,
-    dialect: "mysql",
+    dialect: "postgres",
   },
   test: {
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    database: `${DB_NAME}_test`,
+    database: `${DB_NAME}`, //_test`,
     host: DB_HOST,
-    dialect: "mysql",
+    dialect: "postgres",
   },
   production: {
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    database: `${DB_NAME}_production`,
+    database: `${DB_NAME}`, //_production`,
     host: DB_HOST,
-    dialect: "mysql",
+    dialect: "postgres",
   },
 };

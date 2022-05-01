@@ -1,47 +1,55 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("StudentDetails", {
+    await queryInterface.createTable("Teachers", {
       id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      sdt_sac_id: {
-        allowNull: false,
+      tac_st_id: {
         type: Sequelize.INTEGER,
       },
-      sdt_fullname: {
+      tac_email: {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      sdt_age: {
-        type: Sequelize.INTEGER,
-      },
-      sdt_gender: {
-        type: Sequelize.STRING,
-      },
-      sdt_class: {
-        type: Sequelize.STRING,
-      },
-      sdt_contact: {
-        type: Sequelize.STRING,
-      },
-      sdt_parent_contact: {
-        type: Sequelize.STRING,
-      },
-      sdt_photo_filename: {
-        type: Sequelize.STRING,
-      },
-      sdt_photo_filepath: {
-        type: Sequelize.STRING,
-      },
-      sdt_date_joined: {
+      tac_password: {
         allowNull: false,
+        type: Sequelize.STRING,
+      },
+      tac_access_token: {
+        type: Sequelize.STRING,
+      },
+      tac_online_status: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      tac_last_online: {
         type: Sequelize.DATE,
       },
-      sdt_birthdate: {
+      tac_last_login: {
+        type: Sequelize.DATE,
+      },
+      email_verified_at: {
+        type: Sequelize.DATE,
+      },
+      tac_status: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      createdBy: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      updatedBy: {
+        type: Sequelize.STRING,
+      },
+      deletedBy: {
+        type: Sequelize.STRING,
+      },
+      deletedAt: {
         type: Sequelize.DATE,
       },
       createdAt: {
@@ -55,7 +63,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("StudentDetails");
+    await queryInterface.dropTable("Teachers");
   },
 };
 

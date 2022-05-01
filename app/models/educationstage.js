@@ -28,7 +28,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "students",
     });
     // Realation ke data Teacher
-    
+    EducationStage.hasMany(models.Teacher, {
+      foreignKey: "tac_st_id",
+      as: "teachers",
+    });
   };
   return EducationStage;
 };

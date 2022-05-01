@@ -31,5 +31,13 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "StudentDetails",
     }
   );
+  StudentDetails.associate = function (models) {
+    // Relation ke data Student
+    StudentDetails.belongsTo(models.Student, {
+      foreignKey: "sdt_sac_id",
+      as: "student",
+    });
+  };
   return StudentDetails;
 };
+

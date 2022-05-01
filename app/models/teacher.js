@@ -1,7 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Student extends Model {
+  class Teacher extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,17 +11,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Student.init(
+  Teacher.init(
     {
-      sac_st_id: DataTypes.INTEGER,
-      sac_email: DataTypes.STRING,
-      sac_password: DataTypes.STRING,
-      sac_access_token: DataTypes.STRING,
-      sac_online_status: DataTypes.BOOLEAN,
-      sac_last_online: DataTypes.DATE,
-      sac_last_login: DataTypes.DATE,
+      tac_st_id: DataTypes.INTEGER,
+      tac_email: DataTypes.STRING,
+      tac_password: DataTypes.STRING,
+      tac_access_token: DataTypes.STRING,
+      tac_online_status: DataTypes.BOOLEAN,
+      tac_last_online: DataTypes.DATE,
+      tac_last_login: DataTypes.DATE,
       email_verified_at: DataTypes.DATE,
-      sac_status: DataTypes.BOOLEAN,
+      tac_status: DataTypes.BOOLEAN,
       createdBy: DataTypes.STRING,
       updatedBy: DataTypes.STRING,
       deletedBy: DataTypes.STRING,
@@ -29,21 +29,20 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Student",
+      modelName: "Teacher",
     }
   );
-  Student.associate = function (models) {
+  Teacher.associate = function (models) {
     // Relation ke data EducationStage
-    Student.belongsTo(models.EducationStage, {
-      foreignKey: "sac_st_id",
+    Teacher.belongsTo(models.EducationStage, {
+      foreignKey: "tac_st_id",
       as: "educationStage",
     });
-    // Relation ke data StudentDetail
-    Student.hasOne(models.StudentDetail, {
-      foreignKey: "sdt_st_id",
+    // Relation ke data TeacherDetail
+    Teacher.hasOne(models.TeacherDetail, {
+      foreignKey: "tdt_tac_id",
       as: "detail",
     });
   };
-  return Student;
+  return Teacher;
 };
-

@@ -1,47 +1,41 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("StudentDetails", {
+    await queryInterface.createTable("TeacherDetails", {
       id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      sdt_sac_id: {
+      tdt_tac_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      sdt_fullname: {
+      tdt_fullname: {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      sdt_age: {
+      tdt_age: {
         type: Sequelize.INTEGER,
       },
-      sdt_gender: {
+      tdt_gender: {
         type: Sequelize.STRING,
       },
-      sdt_class: {
+      tdt_contact: {
         type: Sequelize.STRING,
       },
-      sdt_contact: {
+      tdt_photo_filename: {
         type: Sequelize.STRING,
       },
-      sdt_parent_contact: {
+      tdt_photo_filepath: {
         type: Sequelize.STRING,
       },
-      sdt_photo_filename: {
-        type: Sequelize.STRING,
-      },
-      sdt_photo_filepath: {
-        type: Sequelize.STRING,
-      },
-      sdt_date_joined: {
+      tdt_date_joined: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      sdt_birthdate: {
+      tdt_birthdate: {
         type: Sequelize.DATE,
       },
       createdAt: {
@@ -55,7 +49,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("StudentDetails");
+    await queryInterface.dropTable("TeacherDetails");
   },
 };
-
