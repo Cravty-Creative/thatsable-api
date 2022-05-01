@@ -40,10 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     });
     // Relation ke data StudentDetail
     Student.hasOne(models.StudentDetail, {
-      foreignKey: "sdt_st_id",
-      as: "detail",
+      foreignKey: "sdt_sac_id",
+      as: "studentDetail",
     });
   };
   return Student;
 };
-
