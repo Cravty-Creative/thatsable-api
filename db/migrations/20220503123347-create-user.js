@@ -1,41 +1,43 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Teachers", {
+    await queryInterface.createTable("Users", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      tac_st_id: {
+      st_id: {
         type: Sequelize.INTEGER,
       },
-      tac_email: {
+      ut_id: {
         allowNull: false,
+        type: Sequelize.INTEGER,
+      },
+      email: {
         type: Sequelize.STRING,
       },
-      tac_password: {
-        allowNull: false,
+      password: {
         type: Sequelize.STRING,
       },
-      tac_access_token: {
+      access_token: {
         type: Sequelize.STRING,
       },
-      tac_online_status: {
+      online_status: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
-      tac_last_online: {
+      last_online: {
         type: Sequelize.DATE,
       },
-      tac_last_login: {
+      last_login: {
         type: Sequelize.DATE,
       },
       email_verified_at: {
         type: Sequelize.DATE,
       },
-      tac_status: {
+      status: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
       },
@@ -44,6 +46,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       updatedBy: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       deletedBy: {
@@ -63,7 +66,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Teachers");
+    await queryInterface.dropTable("Users");
   },
 };
-

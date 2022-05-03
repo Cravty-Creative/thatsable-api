@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   StudentDetail.init(
     {
-      sdt_sac_id: DataTypes.INTEGER,
+      sdt_user_id: DataTypes.INTEGER,
       sdt_fullname: DataTypes.STRING,
       sdt_age: DataTypes.INTEGER,
       sdt_gender: DataTypes.STRING,
@@ -31,10 +31,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   StudentDetail.associate = function (models) {
-    // Relation ke data Student
-    StudentDetail.belongsTo(models.Student, {
-      foreignKey: "sdt_sac_id",
-      as: "student",
+    // Relation ke data User
+    StudentDetail.belongsTo(models.User, {
+      foreignKey: "sdt_user_id",
+      as: "user",
     });
   };
   return StudentDetail;

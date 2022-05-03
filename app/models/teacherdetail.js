@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class TeacherDetail extends Model {
     /**
@@ -13,19 +11,29 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  TeacherDetail.init({
-    tdt_tac_id: DataTypes.INTEGER,
-    tdt_fullname: DataTypes.STRING,
-    tdt_age: DataTypes.INTEGER,
-    tdt_gender: DataTypes.STRING,
-    tdt_contact: DataTypes.STRING,
-    tdt_photo_filename: DataTypes.STRING,
-    tdt_photo_filepath: DataTypes.STRING,
-    tdt_date_joined: DataTypes.DATE,
-    tdt_birthdate: DataTypes.DATE
-  }, {
-    sequelize,
-    modelName: 'TeacherDetail',
-  });
+  TeacherDetail.init(
+    {
+      tdt_user_id: DataTypes.INTEGER,
+      tdt_fullname: DataTypes.STRING,
+      tdt_age: DataTypes.INTEGER,
+      tdt_gender: DataTypes.STRING,
+      tdt_contact: DataTypes.STRING,
+      tdt_photo_filename: DataTypes.STRING,
+      tdt_photo_filepath: DataTypes.STRING,
+      tdt_date_joined: DataTypes.DATE,
+      tdt_birthdate: DataTypes.DATE,
+    },
+    {
+      sequelize,
+      modelName: "TeacherDetail",
+    }
+  );
+  TeacherDetail.associate = function (models) {
+    // Relation ke data User
+    TeacherDetail.belongsTo(models.User, {
+      foreignKey: "tdt_user_id",
+      as: "user",
+    });
+  };
   return TeacherDetail;
 };

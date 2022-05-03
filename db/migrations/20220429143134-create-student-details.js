@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      sdt_sac_id: {
+      sdt_user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
@@ -58,4 +58,3 @@ module.exports = {
     await queryInterface.dropTable("StudentDetails");
   },
 };
-

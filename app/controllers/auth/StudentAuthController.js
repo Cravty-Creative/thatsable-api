@@ -83,16 +83,21 @@ class StudentAuthController {
       });
   }
   static Authorization(req, res, next) {
-    try {
-      const header = req.header("Authorization");
-      if (!header) throw err;
-      const token = header.split(" ")[1];
-      if (!token) throw err;
-      const data = jwt.verify(token, config.app.jwtSecret);
-      return next();
-    } catch (err) {
-      return res.sendStatus(401);
-    }
+    StudentService.getToken(req.params.id)
+      .then((result) => {
+        if (!result) return res.sendStatus(404); // Not found
+        const header = req.header("Authorization");
+        if (!header) throw res.sendStatus(401); // Unauthorized
+        const token = header.split(" ")[1];
+        // Cek apakah token ada dan sesuai dengan pemiliknya
+        if (!token || token !== result) return res.sendStatus(403); // Forbidden
+        jwt.verify(token, config.app.jwtSecret);
+        return next();
+      })
+      .catch((error) => {
+        console.error(error);
+        return res.sendStatus(500); // Internal Server Error
+      });
   }
 }
 

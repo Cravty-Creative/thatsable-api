@@ -1,16 +1,16 @@
-const { User, StudentDetail, sequelize } = require("../models");
+const { User, TeacherDetail, sequelize } = require("../models");
 
 /**
- * @class StudentRepository.js
+ * @class TeacherRepository.js
  * @author Rizky Adji Pangestu
  */
-class StudentRepository {
-  static async create(student, detail) {
+class TeacherRepository {
+  static async create(teacher, detail) {
     const transaction = await sequelize.transaction();
-    console.log("Start Student Transaction ...");
+    console.log("Start Teacher Transaction ...");
     try {
-      const result = await User.create(student, { transaction });
-      await StudentDetail.create(detail, { transaction });
+      const result = await User.create(teacher, { transaction });
+      await TeacherDetail.create(detail, { transaction });
       await transaction.commit();
       console.log("Transaction commited");
       return {
@@ -28,7 +28,7 @@ class StudentRepository {
     return User.findOne({
       where: {
         email: email,
-        ut_id: 2, // student
+        ut_id: 1, // teacher
         status: true,
       },
     });
@@ -37,7 +37,7 @@ class StudentRepository {
     return User.findOne({
       where: {
         id: id,
-        ut_id: 2, // student
+        ut_id: 1, // teacher
         status: true,
       },
     });
@@ -46,11 +46,11 @@ class StudentRepository {
     return User.update(data, {
       where: {
         id: id,
-        ut_id: 2, // student
+        ut_id: 1, // teacher
         status: true,
       },
     });
   }
 }
 
-module.exports = StudentRepository;
+module.exports = TeacherRepository;

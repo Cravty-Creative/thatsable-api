@@ -6,7 +6,7 @@
 const router = require("express").Router();
 
 // Public Routes
-// router.use("/auth/teacher", require("./auth/teacherAuth"));
+router.use("/auth/teacher", require("./auth/teacherAuth"));
 router.use("/auth/student", require("./auth/studentAuth"));
 router.use("/api/educationStage", require("./api/educationStage"));
 // Authorized Routes

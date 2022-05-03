@@ -78,7 +78,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQ1MTUwNjUzLCJlbWFpbCI6InJpemt5YWRqaTIxQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNjUxNTQxMDY1fQ.ep3UHLhJf7wGh4fZ1KFsFhG-7JJpFfT7VUqZt2RJPJY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjU3Mjk5MzY0LCJlbWFpbCI6InJpemt5YWRqaTIxQGdtYWlsLmNvbSIsInJvbGUiOjIsImlhdCI6MTY1MTU4ODI2MH0.lh6luj7dEqED4T7M5MUZGtx_3wNTDRjuEXau-R0sDzw",
 									"type": "string"
 								}
 							]
@@ -92,7 +92,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8000/auth/student/logout/345150653",
+							"raw": "http://localhost:8000/auth/student/logout/657299364",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,112 @@
 								"auth",
 								"student",
 								"logout",
-								"345150653"
+								"657299364"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TeacherAuth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"rizky.adji@gmail.com\",\r\n  \"password\": \"password\",\r\n  \"fullname\": \"Rizky Adji\",\r\n  \"phone\": \"088899899989\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/teacher/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"teacher",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"rizky.adji@gmail.com\",\r\n  \"password\": \"password\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/teacher/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"teacher",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjI1NzgxODIxLCJlbWFpbCI6InJpemt5LmFkamlAZ21haWwuY29tIiwicm9sZSI6MSwiaWF0IjoxNjUxNTg4MzAwfQ.zAp_0pflHUA3KxBRbMxihBaThE_Q4g7C8rt2VYWZUOA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/auth/teacher/logout/225781821",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"teacher",
+								"logout",
+								"225781821"
 							]
 						}
 					},
