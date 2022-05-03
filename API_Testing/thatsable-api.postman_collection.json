@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "995356b2-53c5-4b2c-aec2-42a0d2d27934",
+		"name": "thatsable-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "StudentAuth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"rizkyadji21@gmail.com\",\r\n  \"password\": \"Kiki082110\",\r\n  \"fullname\": \"Rizky Adji Pangestu\",\r\n  \"phone\": \"088899899989\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/student/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"student",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"rizkyadji21@gmail.com\",\r\n  \"password\": \"Kiki082110\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/auth/student/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"student",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQ1MTUwNjUzLCJlbWFpbCI6InJpemt5YWRqaTIxQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNjUxNTQxMDY1fQ.ep3UHLhJf7wGh4fZ1KFsFhG-7JJpFfT7VUqZt2RJPJY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/auth/student/logout/345150653",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"student",
+								"logout",
+								"345150653"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

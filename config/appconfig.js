@@ -11,5 +11,6 @@ module.exports = {
     appName: process.env.APP_NAME || "thatsable-api",
     env: process.env.NODE_ENV || "development",
     server: process.env.SERVER || "localhost",
-  }
+    jwtSecret: process.env.SECRET_KEY || "thatsable-api",
+  },
 };
