@@ -11,6 +11,7 @@ module.exports = {
       tdt_user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: { model: "Users", key: "id" },
       },
       tdt_fullname: {
         allowNull: false,

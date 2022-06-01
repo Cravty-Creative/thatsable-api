@@ -10,10 +10,12 @@ module.exports = {
       },
       st_id: {
         type: Sequelize.INTEGER,
+        references: { model: "EducationStages", key: "id" },
       },
       ut_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: { model: "UserTypes", key: "id" },
       },
       email: {
         type: Sequelize.STRING,
